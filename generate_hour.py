@@ -4,6 +4,8 @@ import argparse
 import time
 from jinja2 import Environment, PrefixLoader, FileSystemLoader
 SCRIPT_DIR=os.path.dirname(os.path.abspath(sys.argv[0]))
+if __name__ is not "__main__":
+    SCRIPT_DIR = __file__
 
 def get_psalm(number):
     return u"Psalm " + unicode(number)
