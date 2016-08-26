@@ -1,0 +1,8 @@
+{% macro repetition(text, numrepetitions, verbose=False, spacer="\n\n") %}
+{%- if verbose -%}
+{{(text ~ spacer) * numrepetitions}}
+{%- else -%}
+{{text}} ({{numrepetitions}} times)
+{%- endif -%}
+{% endmacro %}
+
