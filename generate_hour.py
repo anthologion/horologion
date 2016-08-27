@@ -3,12 +3,13 @@ import os, sys
 import argparse
 import time
 from jinja2 import Environment, PrefixLoader, FileSystemLoader
+from psalter import cycle_psalms_weekly
 SCRIPT_DIR=os.path.dirname(os.path.abspath(sys.argv[0]))
 if __name__ is not "__main__":
     SCRIPT_DIR = os.path.dirname(__file__)
 
 def get_psalm(number):
-    return u"Psalm " + unicode(number)
+    return u"Psalm " + unicode(number) + u" Text" 
 
 def generate_service(church, rite, language, trans, time):
     # For the time being, we wil just hardcode things. We can get fnacy later.
@@ -20,6 +21,7 @@ def generate_service(church, rite, language, trans, time):
                                global_macros])
     j_env = Environment(loader=loader)
     j_env.globals['psalm'] = get_psalm
+    j_env.globals['cycle_psalms_weekly'] = cycle_psalms_weekly
     template = j_env.get_template('midnight.md')
     return template.render()
 
