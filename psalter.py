@@ -1,4 +1,12 @@
+from bible.bible import TomlBible
 from datetime import datetime,timedelta
+
+class Psalter(object):
+    def __init__(self):
+        self._bible = TomlBible()
+
+    def get_psalm(self, number):
+        return self._bible["Psalm %d" % int(number)]
 
 def cycle_psalms_weekly(psalmlist, batch_size=1, weekday=None, start_day = 6):
     """
@@ -38,4 +46,5 @@ if __name__ == "__main__":
     for day in date_list:
         print day
         print cycle_psalms_weekly([121,134],1, day)
+    print Psalter().get_psalm(3)
 

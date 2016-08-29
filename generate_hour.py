@@ -4,12 +4,14 @@ import argparse
 import time
 from jinja2 import Environment, PrefixLoader, FileSystemLoader
 from psalter import cycle_psalms_weekly
+from psalter import Psalter
 SCRIPT_DIR=os.path.dirname(os.path.abspath(sys.argv[0]))
 if __name__ is not "__main__":
     SCRIPT_DIR = os.path.dirname(__file__)
 
 def get_psalm(number):
-    return u"Psalm " + unicode(number) + u" Text" 
+    p = Psalter()
+    return p.get_psalm(number)
 
 def generate_service(church, rite, language, trans, time):
     # For the time being, we wil just hardcode things. We can get fnacy later.
