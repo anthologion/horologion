@@ -1,0 +1,7 @@
+{% macro comeletus() %}
+Come, let us worship God our King!
+
+Come, let us worship and fall down before Christ our King and our God.
+
+Come, let us worship and fall down before Christ Himself, our King and our God.
+{% endmacro %}

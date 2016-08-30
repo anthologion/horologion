@@ -1,8 +1,14 @@
 {% macro repetition(text, numrepetitions, verbose=False, spacer="\n\n") %}
 {%- if verbose -%}
 {{(text ~ spacer) * numrepetitions}}
+{%- elif numrepetitions == 1 -%}
+{{text}}
 {%- else -%}
 {{text}} ({{numrepetitions}} times)
-{%- endif -%}
+{% endif -%}
+{% endmacro %}
+
+{% macro lhm(numrepetitions=1) %}
+Lord, have mercy.
 {% endmacro %}
 
