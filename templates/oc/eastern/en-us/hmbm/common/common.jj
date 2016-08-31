@@ -1,7 +1,70 @@
+{% import "macros.jj" as pmacros %}
+
 {% macro comeletus() %}
 Come, let us worship God our King!
 
 Come, let us worship and fall down before Christ our King and our God.
 
 Come, let us worship and fall down before Christ Himself, our King and our God.
+{% endmacro %}
+
+{% macro inthename() %}
+In the name of the Father and of the and of the Holy Spirit.
+{% endmacro %}
+
+{% macro glorygod() %}
+Glory to You, our God, Glory to You!
+{% endmacro %}
+
+{% macro glory3() %}
+Glory to the Father and to the Son and to the Holy Spirit, now and ever and
+unto ages of ages.
+{% endmacro %}
+
+{% macro mostholy() %}
+Most Holy Trinity, have mercy on us!
+
+Lord, cleanse us from our sins!
+
+Master, pardon our transgressions!
+
+Holy One, visit and heal our infirmities, for Your name's sake. 
+{% endmacro %}
+
+{% macro holygod() %}
+{{ pmacros.repetition("Holy God! Holy Mighty! Holy Immortal, have mercy on us!", 3) }}
+{% endmacro %}
+
+{% macro ourfather() %}
+Our Father in heaven, hallowed be Your name. Your kingdom come. Your will be
+done, on earth as it is in heaven. Give us this day our daily bread. And
+forgive us our trespasses, as we forgive those who trespass against us. And
+lead us not into temptation, but deliver us from the evil one. 
+{% endmacro %}
+
+{% macro throughtheprayers() %}
+Through the prayers of our holy fathers, O Lord Jesus Christ our God, have
+mercy upon us and save us. Amen.
+{% endmacro %}
+
+{% macro heavenlyking() %}
+O Heavenly King, Comforter, Spirit of Truth, You are everywhere [present] and
+fill all things. Treasury of blessings and Giver of life: come and abide in us,
+and cleanse us from every impurity, and save our souls, O Good One! 
+{% endmacro %}
+
+{% macro trisagion() %}
+{{ holygod() }}
+{{ glorygod() }}
+{{ mostholy() }}
+{{ pmacros.repetition(lhm, 3) }}
+{{ glorygod() }} Amen.
+{% endmacro %}
+
+{% macro theusual() %}
+{{ inthename() }} Amen.
+{{ glorygod() }}
+{{ heavenlyking() }}
+{{ trisagion() }}
+{{ ourfather() }}
 {% endmacro %}

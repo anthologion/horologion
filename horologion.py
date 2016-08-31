@@ -24,7 +24,7 @@ def generate_service(church, rite, language, trans, time):
     j_env = Environment(loader=loader)
     j_env.globals['psalm'] = get_psalm
     j_env.globals['cycle_psalms_weekly'] = cycle_psalms_weekly
-    template = j_env.get_template('midnight.md')
+    template = j_env.get_template('%s.md' % time)
     return template.render()
 
 
@@ -38,5 +38,5 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     print generate_service(args.church, args.rite, args.language,
-                           args.translation, args.datetime)
+                           args.translation, "vespers")
 
